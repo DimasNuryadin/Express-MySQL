@@ -1,4 +1,8 @@
 // Server
+
+// ENV
+require('dotenv').config()
+const PORT = process.env.PORT || 5000;
 const express = require('express');
 const app = express();
 
@@ -27,6 +31,6 @@ app.use('/users', usersRoute);
 //   })
 // })
 
-app.listen(4000, () => {
-  console.log('Server Berhasil di running di port : 4000')
+app.listen(PORT, () => {
+  console.log(`Server Berhasil di running di port : ${PORT}`)
 })
