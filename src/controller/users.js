@@ -1,15 +1,21 @@
 // File menyimpan handler untuk route
-const getAllUsers = (req, res) => {
-  const data = {
-    id: '1',
-    name: 'Dimas Nuryadin',
-    email: 'dimasnuryadinn@gmail.com',
-    address: 'Bandung'
+const UsersModel = require('../models/users')
+
+const getAllUsers = async (req, res) => {
+  // Untuk mengecek error saat pemanggilan database
+  try {
+    const [data] = await UsersModel.getAllUsers();
+
+    res.json({
+      message: 'GET all users success',
+      data: data,
+    })
+  } catch (error) {
+    res.status(500).json({
+      message: 'Server error',
+      serverMessage: error,
+    })
   }
-  res.json({
-    message: 'GET all users success',
-    data: data,
-  })
 }
 
 const createNewUser = (req, res) => {

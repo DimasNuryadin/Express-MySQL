@@ -27,11 +27,6 @@ app.use('/users', usersRoute);
 //   })
 // })
 
-// Cek Koneksi SQL
-app.use('/', (req, res) => {
-
-})
-
 app.listen(4000, () => {
   console.log('Server Berhasil di running di port : 4000')
 })
