@@ -1,3 +1,4 @@
+// File menyimpan handler untuk route
 const getAllUsers = (req, res) => {
   const data = {
     id: '1',
